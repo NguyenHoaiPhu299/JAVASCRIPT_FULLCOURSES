@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>myFirst => mySecond</h2>
+    <h3 id="demo1"></h3>
+    <h2>MySecond => myFirst</h2>
+    <h3 id="demo2"></h3>
+    <script>
+        function myDisplayer1(para) {
+            document.getElementById("demo1").innerHTML = para;
+        }
+        function myFirst1() {
+            myDisplayer1("Hello");
+        }
+        function mySecond1() {
+            myDisplayer1("Goodbye");
+        }
+
+        // ---------------------------------------------------------------------------
+
+        function myDisplayer2(para) {
+            document.getElementById("demo2").innerHTML = para;
+        }
+        function myFirst2() {
+            myDisplayer2("Hello");
+        }
+        function mySecond2() {
+            myDisplayer2("Goodbye");
+        }
+
+        // ---------------------------------------------------------------------------
+        
+        // myFirst -> mySecond
+        myFirst1();
+        mySecond1();
+
+        // MySecond -> myFirst
+        mySecond2();
+        myFirst2();
+    </script>
+</body>
+
+</html>

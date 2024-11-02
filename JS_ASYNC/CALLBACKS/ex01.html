@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculator 1</h1>
+    <h3 id="demo1"></h3>
+    <hr>
+    <h1>Calculator 2</h1>
+    <h3 id="demo2"></h3>
+    <script>
+        // TH1 ----------------------------------------
+        function myDisplayer1(some) {
+            document.getElementById("demo1").innerHTML = some;
+        }
+
+        function calc1(num1, num2) {
+            return num1 + num2;
+        }
+
+        let result1 = calc1(5, 5);
+        myDisplayer1(result1);
+
+        // TH2 ----------------------------------------
+        function myDisplayer2(some) {
+            document.getElementById("demo2").innerHTML = some;
+        }
+
+        function calc2(num1, num2) {
+            myDisplayer2(num1 + num2);
+        }
+
+        calc2(5, 5);
+    </script>
+</body>
+
+</html>
