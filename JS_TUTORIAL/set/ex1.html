@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+</body>
+
+<script>
+    // Khởi tạo một đối tượng Set tên letters
+    const letters = new Set(["a", "b", "c"]);
+
+    // Kiểm tra kiểu của letters và đối tượng Set
+    document.getElementById('demo1').innerHTML = typeof letters;
+    document.getElementById('demo2').innerHTML = letters instanceof Set;
+
+    // In ra danh sách giá trị
+    let text = "";
+    for (const x of letters) {
+        text += x;
+    }
+
+    document.getElementById('demo3').innerHTML = text;
+
+    // Khai báo biến
+    const e = "e";
+    const g = "g";
+
+    // Thêm giá trị vào đối tượng (giá trị, biến, và thêm nhiều biến giá trị)
+    letters.add("d");
+    letters.add(e);
+    letters.add("f");
+    letters.add(g);
+    letters.add(g);
+    letters.add(g);
+
+    // In ra kết quả
+    let text1 = "";
+    for (const x of letters) {
+        text1 += x;
+    }
+    document.getElementById('demo4').innerHTML = text1;
+</script>
+</html>

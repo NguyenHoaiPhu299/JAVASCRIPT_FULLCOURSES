@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo-id"></p>
+    <a id="demo-tag"></a>
+    <p class="demo-class"></p>
+    <p id="demo-selector"></p>
+    <p id="demo-collection">CUUBEEE</p>
+</body>
+<script>
+    const ele_id = document.getElementById('demo-id');
+    ele_id.innerHTML = "DEMO ID";
+    // If the element is found, the method will return the element as an object (in element).
+    // If the element is not found, element will contain null.
+
+    const ele_tag = ele_id.getElementsByTagName('p');
+    ele_tag.innerHTML = "DEMO Ele-Tag"
+
+    document.getElementById('demo-collection').innerHTML = "<h1>HELLO</h1>"
+</script>
+</html>

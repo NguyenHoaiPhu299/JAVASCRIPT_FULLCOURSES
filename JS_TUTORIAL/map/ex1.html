@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Tạo một map
+        const fruits = new Map([
+            ["apple", 500],
+            ["bananas", 300],
+            ["orange", 200]
+        ]);
+        console.log(fruits);
+
+        // Cài giá trị cho Map
+        fruits.set("pineapple", 400);
+        fruits.set("grape", 100);
+        fruits.set("mangosteen", 250);
+        console.log(fruits);
+
+        // Thay đổi giá trị hiện có của map
+        fruits.set("pineapple", 450);
+        console.log(fruits);
+
+        // Map là một đối tượng
+        console.log(typeof fruits);
+        console.log(fruits instanceof Map);
+
+        // get() trả về giá trị của key trong map
+        console.log("- get()");
+        console.log(fruits.get("apple"));
+
+        // size trả về số phần tử trong map
+        console.log("- size");
+        console.log(fruits.size);
+
+        // delete() xóa một phần tử map
+        console.log("- delete()");
+        fruits.delete("apple");
+
+        // has() trả về đúng  nếu tồn tại trong map
+        console.log("- has()");
+        fruits.has("grape");
+        fruits.delete("grape");
+        fruits.has("grape");
+
+        // forEach() invokes a callback cho mỗi cặp key-value trong map
+        console.log("- forEach()");
+        fruits.forEach(function (value, key) {
+            console.log(key + ' = ' + value);
+        });
+
+        // entries() trả về đối tượng iterator với key-value trong map
+        console.log("- entries()");
+        for (const x of fruits.entries()) {
+            console.log(x);
+        }
+
+        // keys() trả về đối tượng iterator với keys trong map
+        console.log("- keys()");
+        for (const x of fruits.keys()) {
+            console.log(x);
+        }
+
+        // values() trả về đối tượng iterator với giá trị của maps
+        console.log("- values()");
+        let total = 0;
+        for (const x of fruits.values()) {
+            total += x;
+        }
+        console.log(total);
+
+        // clear() xóa tất cả các phần tử map
+        console.log("- clear()");
+        fruits.clear();
+        console.log(fruits);
+    </script>
+</body>
+
+</html>

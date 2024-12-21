@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+</body>
+<script>
+    // setTimeout()
+    setTimeout(myFunction, 3000);
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "I love You 1 !!";
+    }
+
+    // 
+    setTimeout(function () { myFunction1("I love You 2 !!!"); }, 2000);
+    function myFunction1(value) {
+        document.getElementById("demo1").innerHTML = value;
+    }
+
+    // setInterval()
+    setInterval(myFunction, 1000);
+    function myFunction() {
+        let d = new Date();
+        document.getElementById("demo2").innerHTML =
+            d.getHours() + ":" +
+            d.getMinutes() + ":" +
+            d.getSeconds();
+    }
+</script>
+
+</html>

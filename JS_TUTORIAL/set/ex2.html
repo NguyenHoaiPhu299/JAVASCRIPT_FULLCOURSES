@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // has() trả về true nếu tồn tại một giá trị chỉ định trong tập hợp.
+    const letters = new Set(["a", "b", "c"]);
+
+    console.log(letters.has("d"));
+    console.log(letters.has("c"));
+
+    // forEach() gọi một hàm cho từng phần tử Set
+    let text = "";
+    letters.forEach(function (value) {
+        text += value;
+    })
+    console.log(text);
+
+    // values() trả về một đối tượng Iterator với các giá trị trong Set
+    for (const entry of letters.values()) {
+        console.log(entry);
+    }
+
+    // keys() trả về một đối tượng Iterator với các giá trị trong Set
+    // Set không có key vậy nên phương thức keys() trả về value giống values()
+    // Map là tập chứa các key và value tương ứng key đó vậy nên phương thức keys() trả về key.
+    for (const entry of letters.keys()) {
+        console.log(entry);
+    }
+
+    // entries() trả về một Iterator với các cặp [value, value] từ một set
+    // Tương thích với maps, bởi với set không có key, cho nên entries trả về [value, value]
+    // với maps sẽ trả về [keys, value]
+    for (const entry of letters.entries()) {
+        console.log(entry);
+    }
+</script>
+
+</html>

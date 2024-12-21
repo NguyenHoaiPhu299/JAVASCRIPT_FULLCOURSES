@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Sự tương đương, hai hàm sau giống nhau
+    async function myFunction() {
+        return "Hello";
+    }
+
+    function myFunction1() {
+        return Promise.resolve("Hello");
+    }
+
+    // Sử dụng promise
+    function myDisplayer(some) {
+        document.getElementById("demo").innerHTML = some;
+    }
+
+    myFunction().then(
+        function (value) { myDisplayer(value); },
+        function (error) { myDisplayer(error); }
+    );
+</script>
+
+</html>

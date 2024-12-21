@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Create Objects
+        const apples = { name: 'Apples' };
+        const bananas = { name: 'Bananas' };
+        const oranges = { name: 'Oranges' };
+
+        // Create a Map
+        const fruits = new Map();
+
+        // Add new Elements to the Map
+        fruits.set(apples, 500);
+        fruits.set(bananas, 300);
+        fruits.set(oranges, 200);
+
+        console.log(fruits.get(apples));
+        console.log(fruits.get("apples"));
+
+        // Map.groupBy() (ES2024): nhóm các phần tử của một đối tượng
+        // theo các giá trị chuỗi được trả về từ hàm callback.
+        // Map.groupBy() không thay đổi đối tượng ban đầu
+        // Callback function to Group Elements
+        // Create an Array
+        const fruits1 = [
+            { name: "apples", quantity: 300 },
+            { name: "bananas", quantity: 500 },
+            { name: "oranges", quantity: 200 },
+            { name: "kiwi", quantity: 150 }
+        ];
+
+        // Callback function to Group Elements
+        function myCallback({ quantity }) {
+            return quantity > 200 ? "ok" : "low";
+        }
+
+        // Group by Quantity
+        const result = Map.groupBy(fruits1, myCallback);
+
+        console.log(result);
+    </script>
+</body>
+
+</html>
