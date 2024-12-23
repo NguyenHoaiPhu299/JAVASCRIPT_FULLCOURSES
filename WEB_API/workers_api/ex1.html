@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Web Workers API</h2>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+</body>
+<script>
+    let w;
+    function startWorker() {
+        if (typeof(w) == "undefined") {
+            // creates a new web worker object and runs the code in "demo_workers.js"
+            w = new Worker("demo_workers.js");
+        } else {
+            window.alert('Sorry! No Web Worker support!');
+        }
+
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    }
+
+    function stopWorker() {
+        w.terminate();
+        w = undefined;
+    }
+</script>
+</html>

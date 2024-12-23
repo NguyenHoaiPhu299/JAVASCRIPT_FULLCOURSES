@@ -1,0 +1,30 @@
+<!-- Nếu số trong trường đầu vào lớn hơn 100
+ (thuộc tính tối đa của đầu vào) và ít hơn 50, hãy hiển thị thông báo -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="id1" type="number" min="50" max="100">
+    <button onclick="myFunction()">OK</button>
+
+    <p id="demo"></p>
+</body>
+<script>
+    function myFunction() {
+        let text = "Value OK";
+        if (document.getElementById('id1').validity.rangeOverflow) {
+            text = "Value too large";
+        } else if (document.getElementById('id1').validity.rangeUnderflow) {
+            text = "Value too small";
+        }
+        document.getElementById('demo').innerHTML = text;
+    }
+</script>
+
+</html>
